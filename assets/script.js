@@ -162,13 +162,16 @@ async function loadRepos() {
     });
     if (!res.ok) throw new Error("GitHub API error " + res.status);
     let repos = await res.json();
-    // keep only non-archived, prioritize originals over forks; default sort by stars then updated
-    repos = repos.filter(r => !r.archived);
+    // keep only non-archived, exclude special repo "me", prioritize originals over forks; default sort by stars then updated
+    repos = repos.filter(r => !r.archived && String(r.name).toLowerCase() !== 'me');
     repos = sortRepos(repos, "stars");
     // prefer originals first
     repos.sort((a, b) => (a.fork === b.fork) ? 0 : (a.fork ? 1 : -1));
     grid.innerHTML = "";
     repos.forEach(repo => grid.appendChild(repoCard(repo)));
+    // update repos stat count to reflect visible repos (without "me")
+    const reposEl = document.querySelector('#repos-count');
+    if (reposEl) reposEl.textContent = String(repos.length);
   } catch (e) {
     grid.innerHTML = `<div class="card"><p>${e.message}. Try later or use VPN.</p></div>`;
   }
