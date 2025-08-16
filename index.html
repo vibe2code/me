@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <title>vibe2code · PINGVI</title>
+    <meta name="description" content="vibe2code — zero-code проекты и скрипты от PINGVI. Авто i18n (RU/EN), авто тёмная/светлая тема, живой список репозиториев GitHub и бейджи Shields.">
+    <link rel="preconnect" href="https://api.github.com">
+    <link rel="preconnect" href="https://img.shields.io">
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header glass">
+      <div class="brand">
+        <img id="avatar" class="avatar" src="https://avatars.githubusercontent.com/u/222844068?v=" alt="vibe2code avatar" />
+        <div class="titles">
+          <h1 id="site-title">vibe2code</h1>
+          <p id="site-tagline"></p>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="lang-toggle" class="chip icon-btn" aria-label="Toggle language" title="Language"></button>
+        <a class="chip primary" href="https://github.com/vibe2code" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <section class="badges glass" id="badges">
+      <a class="stat-link" href="https://github.com/vibe2code?tab=followers" target="_blank" rel="noopener noreferrer">
+        <div class="stat" id="stat-followers" aria-label="Followers">
+          <span class="icon">👥</span>
+          <div class="stat-text">
+            <span class="value" id="followers-count">—</span>
+            <span class="caption" id="followers-caption">Followers</span>
+          </div>
+        </div>
+      </a>
+      <a class="stat-link" href="https://github.com/vibe2code?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <div class="stat" id="stat-repos" aria-label="Repositories">
+          <span class="icon">📦</span>
+          <div class="stat-text">
+            <span class="value" id="repos-count">—</span>
+            <span class="caption" id="repos-caption">Repos</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <main>
+  
+
+      <section class="projects">
+        <div class="section-head">
+          <h2 id="projects-title"></h2>
+        </div>
+        <div id="projects-grid" class="grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p id="footer-line-1">© <span id="year"></span> vibe2code</p>
+      <p id="footer-line-2">made with ❤️ by <b>PINGVI</b></p>
+    </footer>
+
+    <script src="./assets/script.js" defer></script>
+  </body>
+  </html>
+
+
